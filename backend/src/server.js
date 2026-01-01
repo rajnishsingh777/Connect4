@@ -23,15 +23,27 @@ const KAFKA_BROKERS = (process.env.KAFKA_BROKERS || 'localhost:9092').split(',')
 
 const app = express();
 const server = http.createServer(app);
+
+// CORS configuration for Socket.IO and Express
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'https://connect4-1-hfp9.onrender.com'
+];
+
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
-    methods: ['GET', 'POST']
+    origin: allowedOrigins,
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(express.json());
 
 // Initialize services
