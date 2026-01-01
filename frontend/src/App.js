@@ -14,6 +14,7 @@ import GameStatus from './components/GameStatus';
 import './App.css';
 
 const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'https://connect4-8j5i.onrender.com';
+const API_URL = process.env.REACT_APP_SOCKET_URL || 'https://connect4-8j5i.onrender.com';
 
 function App() {
   // Game state
@@ -175,7 +176,7 @@ function App() {
    */
   const fetchLeaderboard = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/leaderboard?limit=20');
+      const response = await axios.get(`${API_URL}/api/leaderboard?limit=20`);
       setLeaderboard(response.data);
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
@@ -187,7 +188,7 @@ function App() {
    */
   const fetchPlayerStats = async (playerUsername) => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/player/${playerUsername}`);
+      const response = await axios.get(`${API_URL}/api/player/${playerUsername}`);
       setPlayerStats(response.data);
     } catch (error) {
       console.error('Error fetching player stats:', error);
