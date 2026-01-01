@@ -55,6 +55,7 @@
   padding: 0.75rem;
   border-radius: 1rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 413px;
 }
 
 .cell {
@@ -104,7 +105,9 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  width: fit-content;
+  width: 100%;
+  max-width: 413px;
+  margin-top: 0.25rem;
 }
 
 .column-label {
@@ -135,5 +138,21 @@
   .column-label {
     width: 40px;
     font-size: 0.8rem;
+  }
+
+  .board {
+    gap: 0.35rem;
+    padding: 0.5rem;
+    max-width: 330px;
+  }
+
+  .column-selector {
+    gap: 0.35rem;
+    max-width: 330px;
+  }
+
+  .column-labels {
+    gap: 0.35rem;
+    max-width: 330px;
   }
 }
