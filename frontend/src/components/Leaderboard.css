@@ -1,0 +1,92 @@
+/**
+ * Leaderboard Component Styles
+ */
+
+.leaderboard {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+.leaderboard h3 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard thead {
+  background: #f3f4f6;
+  border-bottom: 2px solid #667eea;
+}
+
+.leaderboard th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.leaderboard tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard tbody tr:hover {
+  background: #f9fafb;
+}
+
+.leaderboard tbody tr:nth-child(odd) {
+  background: #fafbfc;
+}
+
+.leaderboard td {
+  padding: 0.75rem 1rem;
+  color: #333;
+}
+
+.leaderboard .rank {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.leaderboard .name {
+  font-weight: 600;
+}
+
+.leaderboard .wins {
+  color: #059669;
+  font-weight: 600;
+}
+
+.leaderboard .rate {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .leaderboard {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .leaderboard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .leaderboard th,
+  .leaderboard td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

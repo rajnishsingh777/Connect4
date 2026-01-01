@@ -1,0 +1,97 @@
+/**
+ * Game Status Component Styles
+ */
+
+.game-status {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.player.active {
+  background: rgba(102, 126, 234, 0.2);
+  border: 2px solid #667eea;
+  font-weight: 600;
+}
+
+.disc-indicator {
+  font-size: 1.5rem;
+}
+
+.player .name {
+  font-size: 1rem;
+  color: #333;
+}
+
+.player.active .name {
+  color: #667eea;
+}
+
+.vs {
+  color: #999;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+}
+
+.game-info {
+  text-align: center;
+}
+
+.turn-message {
+  font-size: 1.1rem;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.game-over-message {
+  font-size: 1.2rem;
+  color: #059669;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.valid-moves {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.valid-moves p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .player {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .turn-message {
+    font-size: 1rem;
+  }
+
+  .game-over-message {
+    font-size: 1.1rem;
+  }
+}

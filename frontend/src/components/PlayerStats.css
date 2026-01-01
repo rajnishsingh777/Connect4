@@ -1,0 +1,90 @@
+/**
+ * Player Stats Component Styles
+ */
+
+.player-stats {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+.player-stats h3 {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.stat .label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.stat .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat .value.win {
+  color: #059669;
+}
+
+.stat .value.loss {
+  color: #ff6b6b;
+}
+
+.stat .value.draw {
+  color: #f59e0b;
+}
+
+@media (max-width: 600px) {
+  .player-stats {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .player-stats h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 0.75rem;
+  }
+
+  .stat .value {
+    font-size: 1.2rem;
+  }
+}

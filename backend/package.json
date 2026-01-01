@@ -1,0 +1,21 @@
+{
+  "name": "connect4-backend",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer Connect Four game with Socket.IO and Kafka",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4",
+    "mongoose": "^7.0.3",
+    "kafkajs": "^2.2.4",
+    "dotenv": "^16.0.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,0 +1,139 @@
+/**
+ * GameBoard Component Styles
+ */
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.column-selector {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.column-indicator {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.column-indicator.active {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: white;
+  cursor: pointer;
+}
+
+.column-indicator.active:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  background: #1e3a8a;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cell.empty {
+  background: #3b82f6;
+}
+
+.cell.player1 {
+  background: #ef4444;
+}
+
+.cell.player2 {
+  background: #fbbf24;
+}
+
+.disc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: dropDisc 0.5s ease-out;
+}
+
+@keyframes dropDisc {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.column-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.column-label {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+
+  .disc {
+    width: 30px;
+    height: 30px;
+  }
+
+  .column-indicator {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .column-label {
+    width: 40px;
+    font-size: 0.8rem;
+  }
+}
