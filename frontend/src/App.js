@@ -14,7 +14,7 @@ import GameStatus from './components/GameStatus';
 import './App.css';
 
 const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || 'https://connect4-8j5i.onrender.com';
-const API_URL = process.env.REACT_APP_SOCKET_URL || 'https://connect4-8j5i.onrender.com';
+const API_URL = (process.env.REACT_APP_SOCKET_URL || 'https://connect4-8j5i.onrender.com').replace(/\/$/, '');
 
 function App() {
   // Game state
