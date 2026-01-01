@@ -37,7 +37,13 @@ function App() {
 
   useEffect(() => {
     console.log('Initializing socket connection to:', SOCKET_URL);
-    const newSocket = io(SOCKET_URL);
+    const newSocket = io(SOCKET_URL, {
+      transports: ['websocket', 'polling'],
+      reconnection: true,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000,
+      reconnectionAttempts: 5
+    });
     
     newSocket.on('connect', () => {
       console.log('Connected to server, socket ID:', newSocket.id);

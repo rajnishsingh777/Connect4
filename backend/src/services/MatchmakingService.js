@@ -52,7 +52,24 @@ class MatchmakingService {
 
     console.log(`[MATCHMAKER] Human mode - waiting for opponent (10 second timeout for bot fallback)`);
     const timeoutId = setTimeout(() => {
-      this.spawnBotOpponent(socketId);
+      const session = this.spawnBotOpponent(socketId);
+      if (session && this.io) {
+        const playerSocket = this.io.sockets.sockets.get(socketId);
+        if (playerSocket) {
+          const gameState = session.gameEngine.getGameState();
+          gameState.player1 = session.player1.username;
+          gameState.player2 = session.player2.username;
+          
+          playerSocket.emit('gameMatched', {
+            sessionId: session.sessionId,
+            player1: session.player1.username,
+            player2: 'ConnectBot',
+            isVsBot: true,
+            gameState: gameState
+          });
+          console.log(`[MATCHMAKER] Bot spawned after 10 second timeout for: ${session.player1.username}`);
+        }
+      }
     }, 10000);
 
     this.matchmakingTimeouts.set(socketId, timeoutId);
